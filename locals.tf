@@ -19,12 +19,12 @@ locals {
         parameters = {
           Deny-Resource-Locations = {
             listOfAllowedLocations = [
-              module.shared.core_config["default_location"],
+              var.default_location,
             ]
           }
           Deny-RSG-Locations = {
             listOfAllowedLocations = [
-              module.shared.core_config["default_location"],
+              var.default_location,
             ]
           }
         }

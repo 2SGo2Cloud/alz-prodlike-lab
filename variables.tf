@@ -11,15 +11,26 @@ variable "root_name" {
 
 variable "root_parent_id" {
   type    = string
-  default = "test-alz"
+  default = ""
 }
 
 variable "subscription_id" {
-  type    = string
-  default = ""
+  type = string
 }
 
 variable "default_location" {
   type    = string
   default = "norwayeast"
+}
+
+variable "connectivity_resources_location" {
+  type    = string
+  default = "norwayeast"
+}
+
+variable "connectivity_resources_tags" {
+  type = map(string)
+  default = {
+    demo_type = "deploy_connectivity_resources_custom"
+  }
 }

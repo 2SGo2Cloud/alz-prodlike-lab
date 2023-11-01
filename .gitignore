@@ -5,6 +5,12 @@
 *.tfstate
 *.tfstate.*
 
+# lock file
+.terraform.lock.hcl
+
+# tfplan
+*tfplan*
+
 # Crash log files
 crash.log
 crash.*.log

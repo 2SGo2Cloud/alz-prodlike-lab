@@ -13,9 +13,6 @@ terraform {
   #   container_name       = "##tfstate-container-name##"
   #   key                  = "terraformstate.tfstate"
   #   subscription_id      = "##tfstate-subscription-id##"
-  #   tenant_id            = "##tfstate-tenant-id##"
-  #   client_id            = "##uai-client-id##"
-  #   use_azuread_auth     = true
   # }
 }
 
