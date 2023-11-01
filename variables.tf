@@ -66,3 +66,8 @@ variable "management_resources_tags" {
     demo_type = "deploy_management_resources_custom"
   }
 }
+
+variable "deploy_identity_resources" {
+  type    = bool
+  default = true
+}

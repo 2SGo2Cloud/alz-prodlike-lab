@@ -1,4 +1,7 @@
-root_id         = "alz"
-root_name       = "My ALZ lab"
-root_parent_id  = "your-root-management-group-here"
-subscription_id = "your-subscription-id-here"
+root_id                       = "alz"
+root_name                     = "My ALZ lab"
+root_parent_id                = "your-root-management-group-here"
+subscription_id               = "your-subscription-id-here"
+deploy_connectivity_resources = false
+deploy_management_resources   = false
+deploy_identity_resources     = false

@@ -21,13 +21,13 @@ module "alz_core" {
   library_path      = "${path.module}/lib"
   default_location  = var.default_location
 
-  deploy_identity_resources = true # Currently deploys no resources
+  deploy_identity_resources = var.deploy_identity_resources # Currently deploys no resources but the management group hierarchy
 
-  deploy_management_resources    = true # Deploys log analytics workspace and automation account
+  deploy_management_resources    = var.deploy_management_resources # Deploy log analytics workspace and automation account
   configure_management_resources = local.configure_management_resources
 
-  deploy_connectivity_resources = false # Deploys firewall and virtual hub/wan if selected
-  #configure_connectivity_resources = local.configure_connectivity_resources
+  deploy_connectivity_resources    = var.deploy_connectivity_resources # Deploy firewall and virtual hub/wan if selected
+  configure_connectivity_resources = local.configure_connectivity_resources
 
   subscription_id_connectivity    = var.subscription_id
   subscription_id_management      = var.subscription_id

@@ -18,23 +18,19 @@ terraform {
 
 provider "azurerm" {
   features {}
-  subscription_id = "" # REPLACE ME
 }
 
 provider "azurerm" {
   alias = "management"
   features {}
-  subscription_id = "" # REPLACE ME
 }
 
 provider "azurerm" {
   alias = "connectivity"
   features {}
-  subscription_id = "" # REPLACE ME
 }
 
 provider "azurerm" {
   alias = "identity"
   features {}
-  subscription_id = "" # REPLACE ME
 }

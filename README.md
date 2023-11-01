@@ -22,6 +22,11 @@ Please be aware of the following prerequisites:
 
 ## Deployment guide
 
+### Variables replace
+
+- Replace the variables in vars.auto.tfvars.example and remove the ".example" extension. This will make Terraform use these variables instead of the default values in variables.tf.
+- Replace the settings in settings.connectivity.tf or settings.management.tf as needed. No change is needed if you want the default setup.
+
 1. Clone the alz-prodlike-lab repository to your local computer
 2. Replace all the necessary variable values to suit your environment
 3. Log in to azure with Azure CLI `az login`
@@ -36,17 +41,15 @@ If you want to deploy the ALZ management group topology directly in your Tenant 
 
 ## Default deployment resources
 
-The default deployment will not deploy any costly resources. It deploys approximately 260 objects where most of it is policy definitions and assignments.
-
-Log analytics workspace and automation account is also created.
+The default deployment will not deploy any costly resources, but there will be an automation account and a log analytics workspace. It deploys approximately 260 objects where most are policy definitions and assignments.
 
 ## Add connectivity
 
-You need to decide on Hub/Spoke or Virtual WAN. Both is possible with this module.
+You need to decide on Hub/Spoke or Virtual WAN. Both is possible with this module, but if you enable connectivity Hub & Spoke is the default.
 
-- Set the "deploy_connectivity_resources" property to true.
-- Uncomment the part of locals.connectivity_settings.tf to use for either Hub & Spoke or Virtual WAN.
-- Uncomment #configure_connectivity_resources in main.tf.
+- Set the "deploy_connectivity_resources" variable to true.
+- Default connectivity configuration is Hub & Spoke. 
+- Update settings.connectivity.tf to get Virtual WAN (the config is commented out in this file).
 
 ## More information
 
