@@ -1,0 +1,110 @@
+{
+  "core": {
+    "subscription_id": "##management-subscription-id##",
+    "role_assignments": [
+      {
+        "scope": "managementSubscription",
+        "role_definition_name": "Owner"
+      },
+      {
+        "scope": "connectivitySubscription",
+        "role_definition_name": "Reader"
+      },
+      {
+        "scope": "identitySubscription",
+        "role_definition_name": "Reader"
+      },
+      {
+        "scope": "rootManagementGroup",
+        "role_definition_name": "Management Group Contributor"
+      },
+      {
+        "scope": "rootManagementGroup",
+        "role_definition_name": "Resource Policy Contributor"
+      },
+      {
+        "scope": "rootManagementGroup",
+        "role_definition_name": "User Access Administrator"
+      }
+    ]
+  },
+  "management": {
+    "subscription_id": "##management-subscription-id##",
+    "role_assignments": [
+      {
+        "scope": "managementSubscription",
+        "role_definition_name": "Owner"
+      },
+      {
+        "scope": "connectivitySubscription",
+        "role_definition_name": "Reader"
+      },
+      {
+        "scope": "identitySubscription",
+        "role_definition_name": "Reader"
+      }
+    ]
+  },
+  "connectivity": {
+    "subscription_id": "##connectivity-subscription-id##",
+    "role_assignments": [
+      {
+        "scope": "managementSubscription",
+        "role_definition_name": "Reader"
+      },
+      {
+        "scope": "connectivitySubscription",
+        "role_definition_name": "Owner"
+      },
+      {
+        "scope": "identitySubscription",
+        "role_definition_name": "Reader"
+      }
+    ]
+  },
+  "identity": {
+    "subscription_id": "##identity-subscription-id##",
+    "role_assignments": [
+      {
+        "scope": "managementSubscription",
+        "role_definition_name": "Reader"
+      },
+      {
+        "scope": "connectivitySubscription",
+        "role_definition_name": "Reader"
+      },
+      {
+        "scope": "identitySubscription",
+        "role_definition_name": "Owner"
+      }
+    ]
+  },
+  "security": {
+    "subscription_id": "##security-subscription-id##"
+  },
+  "lz-vending": {
+    "subscription_id": "##management-subscription-id##",
+    "role_assignments": [
+      {
+        "scope": "managementSubscription",
+        "role_definition_name": "Owner"
+      },
+      {
+        "scope": "rootManagementGroup",
+        "role_definition_name": "User Access Administrator"
+      },
+      {
+        "scope": "rootManagementGroup",
+        "role_definition_name": "Management Group Contributor"
+      },
+      {
+        "scope":"connectivitySubscription",
+        "role_definition_name":"Network Contributor"
+      },
+      {
+        "scope":"##landing-zones-management-group-id##",
+        "role_definition_name": "Contributor"
+      }
+    ]
+  }
+}
