@@ -1,0 +1,27 @@
+# This is an example of a hub/spoke deployment landing zone peering with a central hub network
+---
+name: lz01
+location: norwayeast
+subscription_id: "00000000-0000-0000-0000-000000000000"
+management_group_id: online
+contact: user@domain.com
+application: vending-example
+virtual_networks:
+  vnet1:
+    name: lz01-network-vnet1
+    address_space:
+      - "10.2.0.0/16"
+    resource_group_name: lz01-network-rg
+    vwan_connection_enabled: false
+    hub_peering_enabled: true
+    hub_peering_use_remote_gateways: false
+    mesh_peering_enabled: false
+role_assignments:
+  ra_1:
+    principal_id: 00000000-0000-0000-0000-000000000000
+    definition: Owner
+    relative_scope: ""
+  ra_2:
+    principal_id: 00000000-0000-0000-0000-000000000000
+    definition: Reader
+    relative_scope: ""

@@ -54,3 +54,77 @@ You need to decide on Hub/Spoke or Virtual WAN. Both is possible with this modul
 ## More information
 
 For more information, check the official [Terraform Enterprise Scale CAF github repository wiki](https://github.com/Azure/terraform-azurerm-caf-enterprise-scale/wiki)
+
+## Azure Landing Zone solution for Vending Machine
+
+This repository is responsible for creating landing zones in Azure Landing Zones framework. For more information on this vending machine, check the [Terraform landing zone vending module for Azure](https://github.com/Azure/terraform-azurerm-lz-vending#terraform-landing-zone-vending-module-for-azure) github repository.
+
+### Create a new landing zone
+
+Creation of landing zones are supposed to be easy and straightforward. This module performs many basic tasks for a new landing zone, and simplifies the process.
+
+You can either create a new subscription via EA billing scope (currently not supported) or use an existing subscription. If you want to use an existing subscription, you need to provide the subscription id in the yaml file.
+
+
+#### Existing subscription with hub/spoke
+
+```yaml
+---
+name: lz##
+location: norwayeast
+subscription_id: "00000000-0000-0000-0000-000000000000"
+management_group_id: online-management-group-id
+contact: email
+application: example-application
+virtual_networks:
+  vnet1:
+    name: lz##-network-vnet1
+    address_space:
+      - "10.x.0.0/16"
+    resource_group_name: lz##-network-rg
+    vwan_connection_enabled: false
+    hub_peering_enabled: true
+    mesh_peering_enabled: true/false
+role_assignments:
+  my_ra_1:
+    principal_id: 00000000-0000-0000-0000-000000000000
+    definition: Owner
+    relative_scope: ''
+  my_ra_2:
+    principal_id: 11111111-1111-1111-1111-111111111111
+    definition: Reader
+    relative_scope: ''
+```
+
+#### Existing subscription with Virtual WAN
+
+Add a new landing zone by creating a new yaml file under lzdata folder for each new landing zone. The yaml file should contain the following information:
+
+```yaml
+---
+name: lz##
+location: norwayeast
+subscription_id: "00000000-0000-0000-0000-000000000000"
+management_group_id: online-management-group-id
+contact: subscription-contact-email
+application: application-name-for-tag
+virtual-wan-enabled: true
+virtual_networks:
+  vnet1:
+    name: lz##-network-vnet1
+    address_space:
+      - "10.x.0.0/16"
+    resource_group_name: lz##-network-rg
+    vwan_connection_enabled: true
+    hub_peering_enabled: false
+    mesh_peering_enabled: true/false
+role_assignments:
+  my_ra_1:
+    principal_id: 00000000-0000-0000-0000-000000000000
+    definition: Owner
+    relative_scope: ''
+  my_ra_2:
+    principal_id: 11111111-1111-1111-1111-111111111111
+    definition: Reader
+    relative_scope: ''
+```
